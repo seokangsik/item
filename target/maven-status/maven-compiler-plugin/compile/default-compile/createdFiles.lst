@@ -1,0 +1,10 @@
+rental\Item.class
+rental\AbstractEvent.class
+rental\ItemCreated.class
+rental\ItemController.class
+rental\config\kafka\KafkaProcessor.class
+rental\ItemApplication.class
+rental\ItemProduced.class
+rental\PolicyHandler.class
+rental\ItemRepository.class
+rental\AbstractEvent$1.class
