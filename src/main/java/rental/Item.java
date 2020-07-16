@@ -20,7 +20,11 @@ public class Item {
         ItemCreated itemCreated = new ItemCreated();
         BeanUtils.copyProperties(this, itemCreated);
         itemCreated.publishAfterCommit();
-
+        
+        rental.external.Product item = new rental.external.Product();
+        // mappings goes here
+        ItemApplication.applicationContext.getBean(rental.external.ProductService.class)
+            .checkProduct(item);
 
     }
 
