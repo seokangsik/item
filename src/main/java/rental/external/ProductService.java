@@ -11,7 +11,7 @@ import java.util.Date;
 @FeignClient(name="Product", url="http://Product:8080")
 public interface ProductService {
 
-    @RequestMapping(method= RequestMethod.GET, path="/products")
+    @RequestMapping(method= RequestMethod.POST, path="/products")
     public void checkProduct(@RequestBody  Product product);
 
 }
