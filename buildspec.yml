@@ -78,7 +78,7 @@ phases:
                     - containerPort: 8080
             livenessProbe: 
               httpGet: 
-                path: /healthz 
+                path: /health 
                 port: 8080 
                 httpHeaders: 
                 - name: X-Custom-Header 
