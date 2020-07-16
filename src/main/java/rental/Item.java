@@ -18,15 +18,15 @@ public class Item {
     @PostPersist
     public void onPostPersist(){
         
+        
+        ItemCreated itemCreated = new ItemCreated();
+        BeanUtils.copyProperties(this, itemCreated);
+        itemCreated.publishAfterCommit();
         rental.external.Product item = new rental.external.Product();
         // mappings goes here
         ItemApplication.applicationContext.getBean(rental.external.ProductService.class)
             .checkProduct(item);
 
-        ItemCreated itemCreated = new ItemCreated();
-        BeanUtils.copyProperties(this, itemCreated);
-        itemCreated.publishAfterCommit();
-        
         
     }
 
