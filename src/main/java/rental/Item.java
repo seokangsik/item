@@ -15,7 +15,7 @@ public class Item {
     private Integer amount;
     private Integer price;
 
-    @PrePersist
+    @PostPersist
     public void onPostPersist(){
         ItemCreated itemCreated = new ItemCreated();
         BeanUtils.copyProperties(this, itemCreated);
