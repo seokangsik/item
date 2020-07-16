@@ -16,7 +16,7 @@ public class Item {
     private Integer price;
 
     @PrePersist
-    public void onPrePersist(){
+    public void onPostPersist(){
         ItemCreated itemCreated = new ItemCreated();
         BeanUtils.copyProperties(this, itemCreated);
         itemCreated.publishAfterCommit();
